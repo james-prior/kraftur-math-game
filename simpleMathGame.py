@@ -63,8 +63,9 @@ def xpPoints():
     return game()
 
 
-def prob(question, answer):
-    return input(question + ' ') == answer
+def prob(question, correct_answer):
+    answer = input(question + ' ')
+    return answer == correct_answer
 
 
 def addition():
