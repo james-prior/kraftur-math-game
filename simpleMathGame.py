@@ -40,10 +40,10 @@ def game(prompt):
         else:
             return action()
     else:
-        Exit()
+        exit_()
 
 
-def Exit():
+def exit_():
     userInput = input('Are you sure you want to quit? Y/n ')
     if userInput == ('Y') or userInput == ('y'):
         sys.exit()
@@ -51,7 +51,7 @@ def Exit():
         return game()
     else:
         print('Please enter "Y" or "n" ')
-        return Exit()
+        return exit_()
 
 
 def xpPoints():
