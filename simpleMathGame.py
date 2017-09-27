@@ -26,17 +26,20 @@ To quit type:            quit
 
 def game(prompt):
     choice = input(prompt)
-    if choice == str('add'):
-        return Addition()
-    elif choice == str('subtract'):
-        return Subtraction()
-    elif choice == str('xp'):
-        return xpPoints()
-    elif choice == str('quit'):
-        return Exit()
-    else:
-        print('Please type "add" or "subtract" or "xp" ')
-        return game()
+    actions = {
+        'add': Addition,
+        'subtract': Subtraction,
+        'xp': xpPoints,
+        'quit': Exit,
+    }
+
+    try:
+        action = actions[choice]
+    except KeyError:
+        print('Please type "add" or "subtract" or "xp" ')  # what about quit?
+        action = game  # WARNING: recursive!
+        
+    return action()
 
 def Exit():
     userInput = input('Are you sure you want to quit? Y/n ')
