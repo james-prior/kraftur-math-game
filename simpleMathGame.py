@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Math questions add and subtraction v 1.0
+# Math problems add and subtraction v 1.0
 
 import random
 import sys
@@ -63,8 +63,8 @@ def xpPoints():
     return game()
 
 
-def prob(question, correct_answer):
-    answer = input(question + ' ')
+def prob(problem, correct_answer):
+    answer = input(problem + ' ')
     return answer == correct_answer
 
 
@@ -78,8 +78,8 @@ def mathion(action_name, problems_and_answers):
     xp = 0
     for _ in range(10):
         random.shuffle(problems_and_answers)
-        for question, answer in problems_and_answers:
-            if prob(question, answer):
+        for problem, answer in problems_and_answers:
+            if prob(problem, answer):
                 num_correct += 1
                 xp_total += 1
                 correct += 1
