@@ -59,7 +59,7 @@ def xpPoints():
     return game()
 
 
-def prob(problem, correct_answer):
+def get_truth_of_answer(problem, correct_answer):
     answer = input(problem + ' ')
     return answer == correct_answer
 
@@ -75,7 +75,7 @@ def mathion(action_name, problems_and_answers):
     for _ in range(10):
         random.shuffle(problems_and_answers)
         for problem, answer in problems_and_answers:
-            if prob(problem, answer):
+            if get_truth_of_answer(problem, answer):
                 num_correct += 1
                 xp_total += 1
                 correct += 1
