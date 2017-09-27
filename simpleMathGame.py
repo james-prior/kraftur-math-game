@@ -63,8 +63,8 @@ def xpPoints():
     return game()
 
 
-def AddProb(addQuestion, addAnswer):
-    if input(addQuestion + ' ') == addAnswer:
+def AddProb(question, answer):
+    if input(question + ' ') == answer:
         return True
 
 
@@ -76,11 +76,10 @@ def addition():
     correct = 0
     wrong = 0
     xp = 0
-    counter = 0
-    while (counter < 10):
+    for _ in range(10):
         random.shuffle(additionList)
-        for addQuestion, addAnswer in additionList:
-            if AddProb(addQuestion, addAnswer):
+        for question, answer in additionList:
+            if AddProb(question, answer):
                 num_correct += 1
                 xp_total += 1
                 correct += 1
@@ -92,15 +91,14 @@ def addition():
                 num_wrong += 1
                 wrong += 1
                 break
-        counter += 1
     print('\n'
           'Number Wrong:   ' +str(wrong) +'\n'
           'Number Correct: ' + str(correct) +'\n'
           'XP Gained:      ' + str(xp))
     game()
 
-def SubProb(subQuestion, subAnswer):
-    if input(subQuestion + ' ') == subAnswer:
+def SubProb(question, answer):
+    if input(question + ' ') == answer:
         return True
 
 
@@ -112,11 +110,10 @@ def subtraction():
     correct = 0
     wrong = 0
     xp = 0
-    counter = 0
-    while (counter < 10):
+    for _ in range(10):
         random.shuffle(subtractionList)
-        for subQuestion, subAnswer in subtractionList:
-            if SubProb(subQuestion, subAnswer):
+        for question, answer in subtractionList:
+            if SubProb(question, answer):
                 num_correct += 1
                 xp_total += 1
                 correct += 1
@@ -128,7 +125,6 @@ def subtraction():
                 num_wrong += 1
                 wrong += 1
                 break
-        counter += 1
     print('\n'
           'Number Wrong:   ' +str(wrong) +'\n'
           'Number Correct: ' + str(correct) +'\n'
