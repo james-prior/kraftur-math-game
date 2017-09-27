@@ -5,7 +5,6 @@
 import sys
 from random import choices
 from functools import partial
-from itertools import islice
 
 total_n_correct = 0
 total_n_wrong = 0
