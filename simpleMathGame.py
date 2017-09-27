@@ -63,9 +63,10 @@ def xpPoints():
     return game()
 
 
-def AddProb(question, answer):
+def prob(question, answer):
     if input(question + ' ') == answer:
         return True
+    # What is return value otherwise?
 
 
 def addition():
@@ -79,7 +80,7 @@ def addition():
     for _ in range(10):
         random.shuffle(additionList)
         for question, answer in additionList:
-            if AddProb(question, answer):
+            if prob(question, answer):
                 num_correct += 1
                 xp_total += 1
                 correct += 1
@@ -97,11 +98,6 @@ def addition():
           'XP Gained:      ' + str(xp))
     game()
 
-def SubProb(question, answer):
-    if input(question + ' ') == answer:
-        return True
-
-
 def subtraction():
     print('You chose Subtraction! ')
     global num_correct
@@ -113,7 +109,7 @@ def subtraction():
     for _ in range(10):
         random.shuffle(subtractionList)
         for question, answer in subtractionList:
-            if SubProb(question, answer):
+            if prob(question, answer):
                 num_correct += 1
                 xp_total += 1
                 correct += 1
