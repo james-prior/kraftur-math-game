@@ -9,10 +9,6 @@ from functools import partial
 num_correct = 0
 num_wrong = 0
 xp_total = 0
-name = input('What is your name? ')
-print('Hello ' + name + '! Welcome to Math Adventure!')
-
-
 prompt = '''
 
 For "Addition" type:     add 
@@ -234,5 +230,10 @@ subtraction_problems_and_answers_text = '''
 subtraction_problems_and_answers = munge(subtraction_problems_and_answers_text)
 
 
-if __name__ == '__main__':
+def main():
+    name = input('What is your name? ')
+    print('Hello ' + name + '! Welcome to Math Adventure!')
     game(prompt)
+
+if __name__ == '__main__':
+    main()
