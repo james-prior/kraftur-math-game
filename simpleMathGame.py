@@ -64,7 +64,7 @@ def show_statistics():
     print('Percentage Correct:', percentage_correct)
 
 
-def get_truth_of_answer(operator, *operands):
+def get_truth_of_answer(operator, operands):
     operator_symbol = {
         add: '+',
         sub: '-',
@@ -86,7 +86,7 @@ def do_problems(action_name, n, operator, problems_and_answers):
     n_extra_points = 0
     print('You chose %s!' % action_name)
     for operands in choices(problems_and_answers, k=n):
-        if get_truth_of_answer(operator, *operands):
+        if get_truth_of_answer(operator, operands):
             total_n_correct += 1
             total_n_extra_points += 1
             n_correct += 1
