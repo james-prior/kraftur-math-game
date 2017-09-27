@@ -22,7 +22,7 @@ To quit type:            quit
 '''
 
 
-def game(prompt):
+def practice(prompt):
     actions = {
         'add': practice_addition,
         'subtract': practice_subtraction,
@@ -230,7 +230,7 @@ subtraction_problems_and_answers = munge(subtraction_problems_and_answers_text)
 def main():
     name = input('What is your name? ')
     print('Hello ' + name + '! Welcome to Math Adventure!')
-    game(prompt)
+    practice(prompt)
 
 if __name__ == '__main__':
     main()
