@@ -25,14 +25,14 @@ To quit type:            quit
 
 
 def game(prompt):
-    choise = input(prompt)
-    if choise == str('add'):
+    choice = input(prompt)
+    if choice == str('add'):
         return Addition()
-    elif choise == str('subtract'):
+    elif choice == str('subtract'):
         return Subtraction()
-    elif choise == str('xp'):
+    elif choice == str('xp'):
         return xpPoints()
-    elif choise == str('quit'):
+    elif choice == str('quit'):
         return Exit()
     else:
         print('Please type "add" or "subtract" or "xp" ')
