@@ -116,6 +116,10 @@ def munge(problems_text):
 
 addition_problems_text = '''
     11 11
+    11 11 11
+    11 11 11 5
+    1 2 3 4 5
+    11 11
     11 2
     11 3
     11 4
