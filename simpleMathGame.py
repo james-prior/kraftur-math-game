@@ -7,9 +7,10 @@ import sys
 from functools import partial
 from itertools import islice
 
-num_correct = 0
-num_wrong = 0
-total_extra_points = 0
+total_n_correct = 0
+total_n_wrong = 0
+total_n_extra_points = 0
+
 prompt = '''
 
 For "Addition" type:     add 
@@ -52,10 +53,10 @@ def exit_():
 
 
 def xpPoints():
-    percentage = (num_correct/(num_correct + num_wrong))*100
-    print('Total Correct: ' + str(num_correct) + '\n'
-          'Total Wrong:   ' + str(num_wrong) + '\n'
-          'Total XP:      ' + str(total_extra_points) + '\n'
+    percentage = (total_n_correct/(total_n_correct + total_n_wrong))*100
+    print('Total Correct: ' + str(total_n_correct) + '\n'
+          'Total Wrong:   ' + str(total_n_wrong) + '\n'
+          'Total XP:      ' + str(total_n_extra_points) + '\n'
           'Percentage:    ' + str(percentage))
 
 
@@ -65,29 +66,29 @@ def get_truth_of_answer(problem, correct_answer):
 
 
 def do_problems(action_name, n, problems_and_answers):
-    global num_correct
-    global num_wrong
-    global total_extra_points
+    global total_n_correct
+    global total_n_wrong
+    global total_n_extra_points
 
-    correct = 0
-    wrong = 0
-    extra_points = 0
+    n_correct = 0
+    n_wrong = 0
+    n_extra_points = 0
     print('You chose %s! ' % action_name)
     for problem, answer in random.choices(problems_and_answers, k=n):
         if get_truth_of_answer(problem, answer):
-            num_correct += 1
-            total_extra_points += 1
-            correct += 1
-            extra_points += 1
+            total_n_correct += 1
+            total_n_extra_points += 1
+            n_correct += 1
+            n_extra_points += 1
             print('[+] Correct! + 1xp')
         else:
             print('[-] Wrong! ')
-            num_wrong += 1
-            wrong += 1
+            total_n_wrong += 1
+            n_wrong += 1
     print('\n'
-          'Number Wrong:   ' +str(wrong) +'\n'
-          'Number Correct: ' + str(correct) +'\n'
-          'XP Gained:      ' + str(extra_points))
+          'Number Wrong:        ' +str(n_wrong) +'\n'
+          'Number Correct:      ' + str(n_correct) +'\n'
+          'Extra Points Gained: ' + str(n_extra_points))
 
 def addition():
     do_problems('Addition', 10, addition_problems_and_answers)
