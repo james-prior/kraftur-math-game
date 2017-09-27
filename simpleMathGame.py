@@ -24,8 +24,8 @@ To quit type:            quit
 
 def game(prompt):
     actions = {
-        'add': addition,
-        'subtract': subtraction,
+        'add': practice_addition,
+        'subtract': practice_subtraction,
         'stats': show_statistics,
         'quit': exit_,
     }
@@ -90,10 +90,10 @@ def do_problems(action_name, n, problems_and_answers):
     print('Number Correct:      ', n_correct)
     print('Extra Points Gained: ', n_extra_points)
 
-def addition():
+def practice_addition():
     do_problems('Addition', 10, addition_problems_and_answers)
 
-def subtraction():
+def practice_subtraction():
     do_problems('Subtraction', 10, subtraction_problems_and_answers)
 
 def munge(problems_and_answers_text):
