@@ -64,9 +64,7 @@ def xpPoints():
 
 
 def prob(question, answer):
-    if input(question + ' ') == answer:
-        return True
-    # What is return value otherwise?
+    return input(question + ' ') == answer
 
 
 def addition():
