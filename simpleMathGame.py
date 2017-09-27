@@ -9,14 +9,14 @@ from itertools import islice
 
 num_correct = 0
 num_wrong = 0
-xp_total = 0
+total_extra_points = 0
 prompt = '''
 
 For "Addition" type:     add 
 '
 For "Subtraction" type:  subtract. 
 '
-For your xp totals type: xp 
+For your extra point totals type: xp 
 '
 To quit type:            quit 
 '''
@@ -55,7 +55,7 @@ def xpPoints():
     percentage = (num_correct/(num_correct + num_wrong))*100
     print('Total Correct: ' + str(num_correct) + '\n'
           'Total Wrong:   ' + str(num_wrong) + '\n'
-          'Total XP:      ' + str(xp_total) + '\n'
+          'Total XP:      ' + str(total_extra_points) + '\n'
           'Percentage:    ' + str(percentage))
 
 
@@ -67,18 +67,18 @@ def get_truth_of_answer(problem, correct_answer):
 def do_problems(action_name, n, problems_and_answers):
     global num_correct
     global num_wrong
-    global xp_total
+    global total_extra_points
 
     correct = 0
     wrong = 0
-    xp = 0
+    extra_points = 0
     print('You chose %s! ' % action_name)
     for problem, answer in random.choices(problems_and_answers, k=n):
         if get_truth_of_answer(problem, answer):
             num_correct += 1
-            xp_total += 1
+            total_extra_points += 1
             correct += 1
-            xp += 1
+            extra_points += 1
             print('[+] Correct! + 1xp')
         else:
             print('[-] Wrong! ')
@@ -87,7 +87,7 @@ def do_problems(action_name, n, problems_and_answers):
     print('\n'
           'Number Wrong:   ' +str(wrong) +'\n'
           'Number Correct: ' + str(correct) +'\n'
-          'XP Gained:      ' + str(xp))
+          'XP Gained:      ' + str(extra_points))
 
 def addition():
     do_problems('Addition', 10, addition_problems_and_answers)
