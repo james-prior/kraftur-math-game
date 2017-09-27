@@ -68,8 +68,8 @@ def prob(question, correct_answer):
     return answer == correct_answer
 
 
-def addition():
-    print('You chose Addition! ')
+def mathion(action_name, problems_and_answers):
+    print('You chose %s! ' % action_name)
     global num_correct
     global num_wrong
     global xp_total
@@ -77,8 +77,8 @@ def addition():
     wrong = 0
     xp = 0
     for _ in range(10):
-        random.shuffle(additionList)
-        for question, answer in additionList:
+        random.shuffle(problems_and_answers)
+        for question, answer in problems_and_answers:
             if prob(question, answer):
                 num_correct += 1
                 xp_total += 1
@@ -96,37 +96,14 @@ def addition():
           'Number Correct: ' + str(correct) +'\n'
           'XP Gained:      ' + str(xp))
     game()
+
+def addition():
+    mathion('Addition', addition_problems_and_answers)
 
 def subtraction():
-    print('You chose Subtraction! ')
-    global num_correct
-    global num_wrong
-    global xp_total
-    correct = 0
-    wrong = 0
-    xp = 0
-    for _ in range(10):
-        random.shuffle(subtractionList)
-        for question, answer in subtractionList:
-            if prob(question, answer):
-                num_correct += 1
-                xp_total += 1
-                correct += 1
-                xp += 1
-                print('[+] Correct! + 1xp')
-                break
-            else:
-                print('[-] Wrong! ')
-                num_wrong += 1
-                wrong += 1
-                break
-    print('\n'
-          'Number Wrong:   ' +str(wrong) +'\n'
-          'Number Correct: ' + str(correct) +'\n'
-          'XP Gained:      ' + str(xp))
-    game()
+    mathion('Subtraction', subtraction_problems_and_answers)
 
-additionList = [('11 + 11', '22'),
+addition_problems_and_answers = [('11 + 11', '22'),
                 ('11 + 2', '13'),
                 ('11 + 3', '14'),
                 ('11 + 4', '15'),
@@ -190,7 +167,7 @@ additionList = [('11 + 11', '22'),
                 ('13 + 13', '26'),
                 ]
 
-subtractionList = [('9 - 1', '8'),
+subtraction_problems_and_answers = [('9 - 1', '8'),
                    ('9 - 2', '7'),
                    ('9 - 3', '6'),
                    ('9 - 4', '5'),
