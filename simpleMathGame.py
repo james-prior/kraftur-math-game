@@ -35,7 +35,7 @@ def game(prompt):
         except KeyError:
             print('Please type "add" or "subtract" or "xp" ')  # what about quit?
         else:
-            return action()
+            action()
 
 
 def exit_():
@@ -56,7 +56,6 @@ def xpPoints():
           'Total Wrong:   ' + str(num_wrong) + '\n'
           'Total XP:      ' + str(xp_total) + '\n'
           'Percentage:    ' + str(percentage))
-    return game()
 
 
 def get_truth_of_answer(problem, correct_answer):
@@ -65,13 +64,14 @@ def get_truth_of_answer(problem, correct_answer):
 
 
 def mathion(action_name, problems_and_answers):
-    print('You chose %s! ' % action_name)
     global num_correct
     global num_wrong
     global xp_total
+
     correct = 0
     wrong = 0
     xp = 0
+    print('You chose %s! ' % action_name)
     for _ in range(10):
         random.shuffle(problems_and_answers)
         for problem, answer in problems_and_answers:
@@ -91,7 +91,6 @@ def mathion(action_name, problems_and_answers):
           'Number Wrong:   ' +str(wrong) +'\n'
           'Number Correct: ' + str(correct) +'\n'
           'XP Gained:      ' + str(xp))
-    game()
 
 def addition():
     mathion('Addition', addition_problems_and_answers)
