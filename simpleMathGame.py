@@ -63,7 +63,7 @@ def get_truth_of_answer(problem, correct_answer):
     return answer == correct_answer
 
 
-def do_problems(action_name, problems_and_answers):
+def do_problems(action_name, n, problems_and_answers):
     global num_correct
     global num_wrong
     global xp_total
@@ -72,7 +72,7 @@ def do_problems(action_name, problems_and_answers):
     wrong = 0
     xp = 0
     print('You chose %s! ' % action_name)
-    for _ in range(10):
+    for _ in range(n):
         random.shuffle(problems_and_answers)
         for problem, answer in problems_and_answers:
             if get_truth_of_answer(problem, answer):
@@ -93,10 +93,10 @@ def do_problems(action_name, problems_and_answers):
           'XP Gained:      ' + str(xp))
 
 def addition():
-    do_problems('Addition', addition_problems_and_answers)
+    do_problems('Addition', 10, addition_problems_and_answers)
 
 def subtraction():
-    do_problems('Subtraction', subtraction_problems_and_answers)
+    do_problems('Subtraction', 10, subtraction_problems_and_answers)
 
 def munge(problems_and_answers_text):
     return [
