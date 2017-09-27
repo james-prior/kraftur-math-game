@@ -63,7 +63,7 @@ def get_truth_of_answer(problem, correct_answer):
     return answer == correct_answer
 
 
-def mathion(action_name, problems_and_answers):
+def do_problems(action_name, problems_and_answers):
     global num_correct
     global num_wrong
     global xp_total
@@ -93,10 +93,10 @@ def mathion(action_name, problems_and_answers):
           'XP Gained:      ' + str(xp))
 
 def addition():
-    mathion('Addition', addition_problems_and_answers)
+    do_problems('Addition', addition_problems_and_answers)
 
 def subtraction():
-    mathion('Subtraction', subtraction_problems_and_answers)
+    do_problems('Subtraction', subtraction_problems_and_answers)
 
 def munge(problems_and_answers_text):
     return [
