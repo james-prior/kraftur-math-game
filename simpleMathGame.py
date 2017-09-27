@@ -17,7 +17,7 @@ For "Addition" type:     add
 '
 For "Subtraction" type:  subtract. 
 '
-For your extra point totals type: xp 
+To see your statistics type: stats 
 '
 To quit type:            quit 
 '''
@@ -27,7 +27,7 @@ def game(prompt):
     actions = {
         'add': addition,
         'subtract': subtraction,
-        'xp': show_statistics,
+        'stats': show_statistics,
         'quit': exit_,
     }
 
@@ -35,7 +35,7 @@ def game(prompt):
         try:
             action = actions[choice]
         except KeyError:
-            print('Please type "add" or "subtract" or "xp" ')  # what about quit?
+            print('Please type "add" or "subtract" or "stats" ')  # what about quit?
         else:
             action()
 
