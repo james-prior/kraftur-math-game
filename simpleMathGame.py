@@ -1,6 +1,9 @@
 #!/usr/bin/env python3.6
 
-# Math problems add and subtraction v 1.0
+"""
+Practices addition and subtraction math problems.
+v 1.0
+"""
 
 import sys
 from random import choices
