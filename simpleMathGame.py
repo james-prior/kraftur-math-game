@@ -14,11 +14,11 @@ total_n_extra_points = 0
 prompt = '''
 
 For "Addition" type:     add 
-'
+
 For "Subtraction" type:  subtract. 
-'
+
 To see your statistics type: stats 
-'
+
 To quit type:            quit 
 '''
 
