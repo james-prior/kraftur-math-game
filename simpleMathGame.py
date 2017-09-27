@@ -86,9 +86,9 @@ def do_problems(action_name, n, problems_and_answers):
             total_n_wrong += 1
             n_wrong += 1
     print('\n'
-          'Number Wrong:        ' + str(n_wrong) + '\n'
-          'Number Correct:      ' + str(n_correct) + '\n'
-          'Extra Points Gained: ' + str(n_extra_points))
+          'Number Wrong:        ', n_wrong, + '\n'
+          'Number Correct:      ', n_correct, + '\n'
+          'Extra Points Gained: ', n_extra_points)
 
 def addition():
     do_problems('Addition', 10, addition_problems_and_answers)
