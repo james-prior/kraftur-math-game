@@ -74,18 +74,17 @@ def do_problems(action_name, n, problems_and_answers):
     xp = 0
     print('You chose %s! ' % action_name)
     for _ in range(n):
-        random.shuffle(problems_and_answers)
-        for problem, answer in islice(problems_and_answers, 1):
-            if get_truth_of_answer(problem, answer):
-                num_correct += 1
-                xp_total += 1
-                correct += 1
-                xp += 1
-                print('[+] Correct! + 1xp')
-            else:
-                print('[-] Wrong! ')
-                num_wrong += 1
-                wrong += 1
+        problem, answer = random.choice(problems_and_answers)
+        if get_truth_of_answer(problem, answer):
+            num_correct += 1
+            xp_total += 1
+            correct += 1
+            xp += 1
+            print('[+] Correct! + 1xp')
+        else:
+            print('[-] Wrong! ')
+            num_wrong += 1
+            wrong += 1
     print('\n'
           'Number Wrong:   ' +str(wrong) +'\n'
           'Number Correct: ' + str(correct) +'\n'
