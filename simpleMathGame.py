@@ -12,16 +12,20 @@ name = input('What is your name? ')
 print('Hello ' + name + '! Welcome to Math Adventure!')
 
 
-def game():
-    choise = (input('\n'
-                    'For "Addition" type:     add ' +'\n'
-                    '\n'
-                    'For "Subtraction" type:  subtract. ' +'\n'
-                    '\n'
-                    'For your xp totals type: xp ' +'\n'
-                    '\n'
-                    'To quit type:            quit ' +'\n'
-                    ))
+prompt = '''
+
+For "Addition" type:     add 
+'
+For "Subtraction" type:  subtract. 
+'
+For your xp totals type: xp 
+'
+To quit type:            quit 
+'''
+
+
+def game(prompt):
+    choise = input(prompt)
     if choise == str('add'):
         return Addition()
     elif choise == str('subtract'):
@@ -248,4 +252,4 @@ subtractionList = [('9 - 1', '8'),
 
 
 if __name__ == '__main__':
-    game()
+    game(prompt)
