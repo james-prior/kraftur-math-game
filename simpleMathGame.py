@@ -27,7 +27,7 @@ def game(prompt):
     actions = {
         'add': addition,
         'subtract': subtraction,
-        'xp': xpPoints,
+        'xp': show_statistics,
         'quit': exit_,
     }
 
@@ -52,7 +52,7 @@ def exit_():
         print('Please enter "Y" or "n" ')
 
 
-def xpPoints():
+def show_statistics():
     percentage = (total_n_correct/(total_n_correct + total_n_wrong))*100
     print('Total Correct:      ' + str(total_n_correct) + '\n'
           'Total Wrong:        ' + str(total_n_wrong) + '\n'
