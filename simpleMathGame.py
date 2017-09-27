@@ -73,8 +73,7 @@ def do_problems(action_name, n, problems_and_answers):
     wrong = 0
     xp = 0
     print('You chose %s! ' % action_name)
-    for _ in range(n):
-        problem, answer = random.choice(problems_and_answers)
+    for problem, answer in random.choices(problems_and_answers, k=n):
         if get_truth_of_answer(problem, answer):
             num_correct += 1
             xp_total += 1
