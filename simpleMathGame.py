@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3.6
 
 # Math problems add and subtraction v 1.0
 
-import random
 import sys
+from random import choices
 from functools import partial
 from itertools import islice
 
@@ -75,7 +75,7 @@ def do_problems(action_name, n, problems_and_answers):
     n_wrong = 0
     n_extra_points = 0
     print('You chose %s! ' % action_name)
-    for problem, answer in random.choices(problems_and_answers, k=n):
+    for problem, answer in choices(problems_and_answers, k=n):
         if get_truth_of_answer(problem, answer):
             total_n_correct += 1
             total_n_extra_points += 1
