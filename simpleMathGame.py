@@ -7,7 +7,7 @@ v 1.0
 
 import sys
 from random import choices
-from functools import partial
+from functools import partial, reduce
 from operator import add, sub
 
 total_n_correct = 0
@@ -71,7 +71,7 @@ def get_truth_of_answer(operator, *operands):
     }
     symbol = ' %s ' % operator_symbol[operator]
     problem = symbol.join(map(str, operands))
-    correct_answer = str(operator(*operands))
+    correct_answer = str(reduce(operator, operands))
     answer = input(problem + ' ')
     return answer == correct_answer
 
