@@ -83,7 +83,7 @@ def do_problems(action_name, n, problems_and_answers):
             total_n_extra_points += 1
             n_correct += 1
             n_extra_points += 1
-            print('[+] Correct! + 1xp')
+            print('[+] Correct! + 1 extra point')
         else:
             print('[-] Wrong! ')
             total_n_wrong += 1
