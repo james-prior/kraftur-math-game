@@ -54,10 +54,10 @@ def exit_():
 
 def show_statistics():
     percentage = (total_n_correct / (total_n_correct + total_n_wrong)) * 100
-    print('Total Correct:      ' + str(total_n_correct) + '\n'
-          'Total Wrong:        ' + str(total_n_wrong) + '\n'
-          'Total Extra Points: ' + str(total_n_extra_points) + '\n'
-          'Percentage:         ' + str(percentage))
+    print('Total Correct:      ', total_n_correct, '\n'
+          'Total Wrong:        ', total_n_wrong, '\n'
+          'Total Extra Points: ', total_n_extra_points, '\n'
+          'Percentage:         ', percentage)
 
 
 def get_truth_of_answer(problem, correct_answer):
