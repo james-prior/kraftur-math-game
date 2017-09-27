@@ -113,7 +113,7 @@ def subtraction():
                 xp_total += 1
                 correct += 1
                 xp += 1
-                print('[+] Correct! + 1xp ')
+                print('[+] Correct! + 1xp')
                 break
             else:
                 print('[-] Wrong! ')
