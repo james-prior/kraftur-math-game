@@ -43,14 +43,15 @@ def game(prompt):
 
 
 def exit_():
-    userInput = input('Are you sure you want to quit? Y/n ')
-    if userInput == ('Y') or userInput == ('y'):
-        sys.exit()
-    elif userInput == ('N') or userInput == ('n'):
-        return game()
-    else:
+    prompt = 'Are you sure you want to quit? Y/n '
+    for choice in iter(partial(input, prompt), ''):
+        choice = choice.lower().strip()
+        if choice == 'y':
+            sys.exit()
+        elif choice == 'n':
+            return
+
         print('Please enter "Y" or "n" ')
-        return exit_()
 
 
 def xpPoints():
