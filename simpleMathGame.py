@@ -30,17 +30,16 @@ def game(prompt):
         'add': addition,
         'subtract': subtraction,
         'xp': xpPoints,
+        'quit': exit_,
     }
 
-    for choice in iter(partial(input, prompt), 'quit'):
+    for choice in iter(partial(input, prompt), ''):
         try:
             action = actions[choice]
         except KeyError:
             print('Please type "add" or "subtract" or "xp" ')  # what about quit?
         else:
             return action()
-    else:
-        exit_()
 
 
 def exit_():
