@@ -57,10 +57,10 @@ def exit_():
 def show_statistics():
     percentage_correct = 100 * (
         total_n_correct / (total_n_correct + total_n_wrong))
-    print('Total Correct:      ', total_n_correct)
-    print('Total Wrong:        ', total_n_wrong)
-    print('Total Extra Points: ', total_n_extra_points)
-    print('Percentage Correct: ', percentage_correct)
+    print('Total Correct:     ', total_n_correct)
+    print('Total Wrong:       ', total_n_wrong)
+    print('Total Extra Points:', total_n_extra_points)
+    print('Percentage Correct:', percentage_correct)
 
 
 def get_truth_of_answer(problem, correct_answer):
@@ -76,7 +76,7 @@ def do_problems(action_name, n, problems_and_answers):
     n_correct = 0
     n_wrong = 0
     n_extra_points = 0
-    print('You chose %s! ' % action_name)
+    print('You chose %s!' % action_name)
     for problem, answer in choices(problems_and_answers, k=n):
         if get_truth_of_answer(problem, answer):
             total_n_correct += 1
@@ -89,9 +89,9 @@ def do_problems(action_name, n, problems_and_answers):
             total_n_wrong += 1
             n_wrong += 1
     print()
-    print('Number Wrong:        ', n_wrong)
-    print('Number Correct:      ', n_correct)
-    print('Extra Points Gained: ', n_extra_points)
+    print('Number Wrong:       ', n_wrong)
+    print('Number Correct:     ', n_correct)
+    print('Extra Points Gained:', n_extra_points)
 
 def practice_addition():
     do_problems('Addition', 10, addition_problems_and_answers)
