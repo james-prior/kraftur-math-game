@@ -27,8 +27,8 @@ To quit type:            quit
 
 def game(prompt):
     actions = {
-        'add': Addition,
-        'subtract': Subtraction,
+        'add': addition,
+        'subtract': subtraction,
         'xp': xpPoints,
     }
 
@@ -68,7 +68,7 @@ def AddProb(addQuestion, addAnswer):
         return True
 
 
-def Addition():
+def addition():
     print('You chose Addition! ')
     global num_correct
     global num_wrong
@@ -104,7 +104,7 @@ def SubProb(subQuestion, subAnswer):
         return True
 
 
-def Subtraction():
+def subtraction():
     print('You chose Subtraction! ')
     global num_correct
     global num_wrong
