@@ -84,7 +84,7 @@ def do_problems(action_name, n, operator, problems_and_answers):
     n_correct = 0
     n_wrong = 0
     n_extra_points = 0
-    print('You chose %s!' % action_name)
+    print(f'You chose {action_name}!')
     for operands in choices(problems_and_answers, k=n):
         if get_truth_of_answer(operator, operands):
             total_n_correct += 1
