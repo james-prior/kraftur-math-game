@@ -38,7 +38,8 @@ def practice(prompt):
         try:
             action = actions[choice]
         except KeyError:
-            print('Please type "add" or "subtract" or "stats" ')  # what about quit?
+            choices = ' or '.join(f'"{action}"' for action in actions)
+            print(f'Please type {choices}.')
         else:
             action()
 
