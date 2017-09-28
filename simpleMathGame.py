@@ -254,7 +254,7 @@ subtraction_problems = (
 
 def main():
     name = input('What is your name? ')
-    print('Hello ' + name + '! Welcome to Math Adventure!')
+    print(f'Hello {name}! Welcome to Math Adventure!')
     practice(prompt)
 
 if __name__ == '__main__':
