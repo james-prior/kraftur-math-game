@@ -101,11 +101,14 @@ def do_problems(action_name, n, operator, problems_and_answers):
     print('Number Correct:     ', n_correct)
     print('Extra Points Gained:', n_extra_points)
 
+
 def practice_addition():
     do_problems('Addition', 10, *addition_problems)
 
+
 def practice_subtraction():
     do_problems('Subtraction', 10, *subtraction_problems)
+
 
 def munge(problems_text):
     return [
@@ -113,6 +116,7 @@ def munge(problems_text):
         for line in problems_text.split('\n')
         if line.strip()
     ]
+
 
 addition_problems_text = '''
     11 11
