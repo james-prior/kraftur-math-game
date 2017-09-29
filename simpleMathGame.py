@@ -69,11 +69,11 @@ def show_statistics():
 
 
 def get_truth_of_answer(operator, operands):
-    operator_symbol = {
+    operator_symbols = {
         add: '+',
         sub: '-',
     }
-    symbol = ' %s ' % operator_symbol[operator]
+    symbol = ' %s ' % operator_symbols[operator]
     problem = symbol.join(map(str, operands))
     correct_answer = str(reduce(operator, operands))
     answer = input(problem + ' ')
