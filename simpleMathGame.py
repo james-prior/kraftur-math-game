@@ -36,7 +36,7 @@ def practice(prompt):
         'quit': exit_,
     }
 
-    for choice in iter(partial(input, prompt), ''):
+    for choice in iter(partial(input, prompt), None):
         try:
             action = actions[choice]
         except KeyError:
@@ -49,7 +49,7 @@ def practice(prompt):
 
 def exit_():
     prompt = 'Are you sure you want to quit? Y/n '
-    for choice in iter(partial(input, prompt), ''):
+    for choice in iter(partial(input, prompt), None):
         choice = choice.lower().strip()
         if choice == 'y':
             sys.exit()
