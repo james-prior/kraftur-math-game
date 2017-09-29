@@ -80,7 +80,7 @@ def get_truth_of_answer(operator, operands):
     return answer == correct_answer
 
 
-def do_problems(operator, problems_and_answers, n=N_PROBLEMS_TO_SOLVE):
+def do_problems(operator, problems, n=N_PROBLEMS_TO_SOLVE):
     global total_n_correct
     global total_n_wrong
     global total_n_extra_points
@@ -94,7 +94,7 @@ def do_problems(operator, problems_and_answers, n=N_PROBLEMS_TO_SOLVE):
     n_wrong = 0
     n_extra_points = 0
     print(f'You chose {action_name}!')
-    for operands in choices(problems_and_answers, k=n):
+    for operands in choices(problems, k=n):
         if get_truth_of_answer(operator, operands):
             total_n_correct += 1
             total_n_extra_points += 1
