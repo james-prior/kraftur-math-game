@@ -80,7 +80,7 @@ def get_truth_of_answer(operator, operands):
     return answer == correct_answer
 
 
-def do_problems(action_name, n, operator, problems_and_answers):
+def do_problems(action_name, operator, problems_and_answers, n=N_PROBLEMS_TO_SOLVE):
     global total_n_correct
     global total_n_wrong
     global total_n_extra_points
@@ -107,11 +107,11 @@ def do_problems(action_name, n, operator, problems_and_answers):
 
 
 def practice_addition():
-    do_problems('Addition', N_PROBLEMS_TO_SOLVE, *addition_problems)
+    do_problems('Addition', *addition_problems)
 
 
 def practice_subtraction():
-    do_problems('Subtraction', N_PROBLEMS_TO_SOLVE, *subtraction_problems)
+    do_problems('Subtraction', *subtraction_problems)
 
 
 def munge(problems_text):
