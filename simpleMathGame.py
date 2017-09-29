@@ -10,6 +10,8 @@ from random import choices
 from functools import partial, reduce
 from operator import add, sub
 
+N_PROBLEMS_TO_SOLVE = 10
+
 total_n_correct = 0
 total_n_wrong = 0
 total_n_extra_points = 0
@@ -38,7 +40,8 @@ def practice(prompt):
         try:
             action = actions[choice]
         except KeyError:
-            choices = ' or '.join(f'"{action}"' for action in actions)
+            quoted_actions = (f'"{action}"' for action in actions)
+            choices = ' or '.join(quoted_actions)
             print(f'Please type {choices}.')
         else:
             action()
@@ -104,11 +107,11 @@ def do_problems(action_name, n, operator, problems_and_answers):
 
 
 def practice_addition():
-    do_problems('Addition', 10, *addition_problems)
+    do_problems('Addition', N_PROBLEMS_TO_SOLVE, *addition_problems)
 
 
 def practice_subtraction():
-    do_problems('Subtraction', 10, *subtraction_problems)
+    do_problems('Subtraction', N_PROBLEMS_TO_SOLVE, *subtraction_problems)
 
 
 def munge(problems_text):
