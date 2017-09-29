@@ -84,15 +84,15 @@ def do_problems(operator, problems, n=N_PROBLEMS_TO_SOLVE):
     global total_n_correct
     global total_n_wrong
     global total_n_extra_points
-
     action_names = {
         add: 'Addition',
         sub: 'Subtraction',
     }
-    action_name = action_names[operator]
+
     n_correct = 0
     n_wrong = 0
     n_extra_points = 0
+    action_name = action_names[operator]
     print(f'You chose {action_name}!')
     for operands in choices(problems, k=n):
         if get_truth_of_answer(operator, operands):
