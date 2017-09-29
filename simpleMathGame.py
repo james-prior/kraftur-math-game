@@ -73,8 +73,8 @@ def get_truth_of_answer(operator, operands):
         add: '+',
         sub: '-',
     }
-    symbol = ' %s ' % operator_symbols[operator]
-    problem = symbol.join(map(str, operands))
+    padded_symbol = ' %s ' % operator_symbols[operator]
+    problem = padded_symbol.join(map(str, operands))
     correct_answer = str(reduce(operator, operands))
     answer = input(problem + ' ')
     return answer == correct_answer
